@@ -23,6 +23,8 @@
 </template>
 
 <script>
+    import {ScrolToElement} from '@/utils/helpers'
+
     export default {
         name: 'HeaderBlock',
         data: () => {
@@ -57,14 +59,7 @@
             goToSection(url) {
                 this.menuIsShow = false;
 
-                const element = document.querySelector(url)
-                if (!element) return
-
-                const top = element.offsetTop;
-                window.scrollTo({
-                    top: top,
-                    behavior: 'smooth'
-                });
+                ScrolToElement(url)
             },
             toggleMenu() {
                 this.menuIsShow = !this.menuIsShow

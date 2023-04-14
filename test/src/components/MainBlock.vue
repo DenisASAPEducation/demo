@@ -12,18 +12,13 @@
 </template>
 
 <script>
+    import {ScrolToElement} from '@/utils/helpers'
+
     export default {
         name: 'MainBlock',
         methods: {
             scrollToMore() {
-                const element = document.querySelector('#skills')
-                if (!element) return
-
-                const top = element.offsetTop;
-                window.scrollTo({
-                    top: top,
-                    behavior: 'smooth'
-                });
+                ScrolToElement('#skills')
             }
         }
     }

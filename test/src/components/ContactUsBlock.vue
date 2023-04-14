@@ -6,8 +6,8 @@
         </p>
         <form @submit.prevent.stop="Submit">
             <div class="inputs">
-                <input class="input-name" placeholder="Your name" v-model="name"/>
-                <input class="input-email" placeholder="Email" v-model="email" type="mail"/>
+                <input placeholder="Your name" v-model="name"/>
+                <input placeholder="Email" v-model="email" type="email"/>
             </div>
             <textarea placeholder="Description (optional)" v-model="description"/>
             <button @click.prevent.stop="Submit">Send</button>
