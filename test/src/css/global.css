@@ -1,0 +1,108 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+#app {
+    font-family: 'Rubik', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+    color: #363940
+}
+
+.primary-color {
+    color: #6E38F7
+}
+.secondary-color {
+    color: #ffffff
+}
+.error-color {
+    color: #DF1F1F
+}
+.neutral-4-color {
+    color: #95A1BB
+}
+
+.hero {
+    font-size: 58px;
+    font-weight: 500;
+    line-height: 68px;
+}
+h1 {
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 43px;
+    text-align: center;
+}
+h2 {
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 38px;
+}
+h3 {
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 34px;
+}
+h4 {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 28px;
+}
+h5 {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+}
+h6 {
+    font-weight: 500;
+    font-size: 18px;
+}
+a {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 20px;
+    color: #6E38F7;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+a.disabled {
+    pointer-events: none;
+}
+a:not(.disabled):hover {
+    text-decoration: underline;
+}
+.small-text {
+    font-size: 14px;
+    line-height: 22px;
+}
+
+.container {
+    width: 980px;
+    padding: 0 20px;
+    max-width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+input, textarea {
+    margin: 0;
+    font-size: 16px;
+    color: #363940;
+    border: 1px solid #CAD1E1;
+    border-radius: 4px;
+    padding: 12px 15px;
+    box-sizing: border-box;
+    outline-color: #CAD1E1
+}
+input::placeholder, textarea::placeholder {
+    color: #95A1BB;
+}
+
+@media screen and (max-width: 980px) {
+    .container {
+        padding: 0 16px;
+    }
+}
