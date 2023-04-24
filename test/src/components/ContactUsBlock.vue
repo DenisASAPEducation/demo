@@ -6,10 +6,10 @@
         </p>
         <form @submit.prevent.stop="Submit">
             <div class="inputs">
-                <input placeholder="Your name" v-model="name"/>
-                <input placeholder="Email" v-model="email" type="email"/>
+                <input placeholder="Your name" v-model.lazy="name" :class="{'border-error': !nameIsValid}"/>
+                <input placeholder="Email" v-model.lazy="email" type="email" :class="{'border-error': !eamailIsValid}"/>
             </div>
-            <textarea placeholder="Description (optional)" v-model="description"/>
+            <textarea placeholder="Description (optional)" v-model.lazy="description"/>
             <button @click.prevent.stop="Submit">Send</button>
         </form>
     </section>
@@ -22,7 +22,26 @@
             return {
                 name: '',
                 email: '',
-                description: ''
+                description: '',
+
+                nameIsValid: true,
+                eamailIsValid: true,
+
+                censorship: ['Lorem']
+            }
+        },
+        watch: {
+            name: function (value) {
+                const re=/[^a-zA-Zа-яА-Я ]/ui
+                this.nameIsValid = !re.test(value)
+            },
+            email: function (value) {
+                this.eamailIsValid = (new RegExp("^((([0-9A-Za-z]{1}[-0-9A-z\\.]{0,30}[0-9A-Za-z]?)|([0-9А-Яа-я]{1}[-0-9А-я\\.]{0,30}[0-9А-Яа-я]?))@([-A-Za-z]{1,}\\.){1,}[-A-Za-z]{2,})$").test(value))
+            },
+            description: function(value) {
+                for(const item of this.censorship) {
+                    this.description = value.replaceAll(item, '*')
+                }
             }
         },
         methods: {

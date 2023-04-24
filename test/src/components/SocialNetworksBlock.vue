@@ -2,7 +2,7 @@
     <section>
         <h1>My social networks</h1>
         <p class="neutral-4-color">There are many reasons to get down and start to get depressed about your situation.</p>
-        <SliderWrapper/>
+        <SliderWrapper :slides="slides"/>
     </section>
 </template>
 
@@ -13,7 +13,19 @@
         name: 'SocialNetworksBlock',
         components: {
             SliderWrapper
-        }
+        },
+        data: () => {
+            return {
+                slides: [
+                    '/images/slider/1.png',
+                    '/images/slider/2.png',
+                    '/images/slider/3.png',
+                    '/images/slider/4.png',
+                    '/images/slider/5.png',
+                    '/images/slider/6.png',
+                ],
+            }
+        },
     }
 </script>
 

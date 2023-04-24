@@ -21,6 +21,9 @@
 .error-color {
     color: #DF1F1F
 }
+.border-error {
+    border-color: #DF1F1F!important;
+}
 .neutral-4-color {
     color: #95A1BB
 }

@@ -25,17 +25,8 @@
             Swiper,
             SwiperSlide
         },
-        data: () => {
-            return {
-                slides: [
-                    '/images/slider/1.png',
-                    '/images/slider/2.png',
-                    '/images/slider/3.png',
-                    '/images/slider/4.png',
-                    '/images/slider/5.png',
-                    '/images/slider/6.png',
-                ],
-            }
+        props: {
+            slides: {Array}
         },
         computed: {
             swiperOption() {
